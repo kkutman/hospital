@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Department</title>
+</head>
+<body>
+<div class="container" style="width: 78%; margin: 0 auto">
+
+    <div class="card" style="width: 18rem;"
+         th:each="department:${getAllDepartment}">
+                <div class="card-body">
+            <h2 class="card-title" th:text="${department.getName()}">Card Tittle</h2>
+<!--            <div class="btn-container">-->
+<!--                <form th:method="DELETE" th:action="@{/hospital/{id}/deleteHospital(id=${hospital.getId()})}">-->
+<!--                    <input type="submit" class="btn btn-outline-primary"  th:value="  Delete  "></input>-->
+<!--                </form>-->
+<!--                <form th:method="PUT" th:action="@{/hospital/{hospitalId}/editHospital(hospitalId=${hospital.getId()})}">-->
+<!--                    <input type="submit" class="btn btn-outline-primary"  th:value="update"></input>-->
+<!--                </form>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+</body>
+</html>

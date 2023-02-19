@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>save</title>
+  <style>
+    body{
+      /*box-sizing: border-box;*/
+      /*!*margin: 0 ;*!*/
+      /*padding: 0;*/
+      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    }
+    .container{
+      width: 100%;
+      height: 100%;
+    margin-left: 450px;
+     margin-top: 75px;
+
+    }
+    .btn_save{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      border-radius: 15px;
+      padding: 20px;
+      width: 150px;
+      background: firebrick;
+      font-size: 15px;
+      color: aliceblue;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+    .btn_save:active{
+      color: #979b9b;
+      background: #bd6060;
+    }
+    .btn_save:hover{
+      color: firebrick;
+      background: gold;
+      box-shadow: 4px -13px 81px 44px rgba(220, 181, 14, 60);
+    }
+    .inputs{
+      width: 350px;
+      border: none;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 10px;
+    }
+    .labels{
+      color: aliceblue;
+      font-size: 30px;
+      font-weight: 400;
+        font-family: "Britannic Bold";
+      /*font-style: italic;*/
+      margin: 10px;
+    }
+
+    .form_hospital{
+      width: 600px;
+      padding: 30px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient(to right top, #17ae6c, #3ca658, #509e45, #5f9532, #6b8c21);
+      border: 2px solid teal;
+      border-radius: 20px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container">
+<form th:method="POST" th:action="createHospital" th:object="${newHospital}" class="form_hospital">
+  <div>
+
+    <label for="name" class="labels"> name </label>
+    <br/>
+    <input type="text" th:field="*{name}"id="name" class="inputs">
+
+<br/>
+    <label for="address"  class="labels"> address </label>
+    <br/>
+    <input type="text" th:field="*{address}"id="address"  class="inputs">
+
+<br/>
+    <label for="img"  class="labels"> image </label>
+    <br/>
+    <input type="text" th:field="*{img}"id="img"  class="inputs">
+
+  <button type="submit" class="btn_save">SAVE</button>
+</div>
+
+</form>
+</div>
+</div>
+</body>
+</html>
