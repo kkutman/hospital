@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>UPDATE DEPARTMENT</title>
 </head>
 <body>
+
+<div class="container">
+  <form th:method="POST" th:action="updateDepartment" th:object="${newUpdateDepartment}" class="form_hospital">
+    <div>
+
+      <label for="name" class="labels"> name </label>
+      <br/>
+      <input type="text" th:field="*{name}"id="name" class="inputs">
+
+      <button type="submit" class="btn_save">SAVE</button>
+    </div>
+
+  </form>
+</div>
+</div>
+
 
 </body>
 </html>

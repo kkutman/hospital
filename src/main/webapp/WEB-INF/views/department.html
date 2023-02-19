@@ -56,6 +56,10 @@
             <input type="submit" class="btn btn-outline-primary"  th:value="  Delete  "></input>
         </form>
         </td>
+        <td><form th:method="PUT" th:action="@{/department/{departmentId}/editDepartment(departmentId=${department.getId()})}">
+            <input type="submit" class="btn btn-outline-primary"  th:value="  Update  "></input>
+        </form>
+        </td>
     </tr>
     </tbody>
 </table>

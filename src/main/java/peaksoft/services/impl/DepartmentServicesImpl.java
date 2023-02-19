@@ -36,7 +36,7 @@ public class DepartmentServicesImpl implements DepartmentServices {
     }
 
     @Override
-    public void updateDepartmentId( Department department) {
-        departmentDao.updateDepartmentId(department.getId(),department);
+    public void updateDepartmentId(Long id, Department department) {
+        departmentDao.updateDepartmentId(id,department);
     }
 }

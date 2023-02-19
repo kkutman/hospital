@@ -43,7 +43,6 @@ public class DepartmentDaoImpl implements DepartmentDao {
     public void updateDepartmentId(Long departmentId, Department department) {
         Department department1 = entityManager.find(Department.class, departmentId);
         department1.setName(department.getName());
-        department1.setDoctors(department.getDoctors());
-        department1.setHospital(department.getHospital());
+
     }
 }

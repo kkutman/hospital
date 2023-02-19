@@ -9,6 +9,8 @@ import peaksoft.models.Hospital;
 import peaksoft.services.DepartmentServices;
 import peaksoft.services.HospitalServices;
 
+import java.util.List;
+
 /**
  * name : kutman
  **/
@@ -29,7 +31,7 @@ public class DepartmentController {
         return "saveDepartment";
     }
 
-        @GetMapping("/saveDepartment")
+    @GetMapping("/saveDepartment")
     public String saveDepartment(Model model){
         model.addAttribute("getAllHospital",hospitalServices.getAllHospital());
         return "saveDepartment";
@@ -49,8 +51,19 @@ public class DepartmentController {
     }
 
     @DeleteMapping("{departmentId}/deleteDepartment")
-    public String deleteHospital(@PathVariable("departmentId")Long id){
+    public String deleteHospital(@PathVariable("departmentId")Long id) {
         departmentServices.deleteDepartmentById(id);
+        return "redirect:/department";
+    }
+
+    @GetMapping("{departmentId}/editDepartment")
+    public String editDepartment(@PathVariable("departmentId")Long id,Model model){
+        model.addAttribute("newUpdateDepartment",departmentServices.getDepartmentById(id));
+        return "updateDepartment";
+    }
+    @PostMapping("{departmentId}/updateDepartment")
+    public String updateDepartment(@PathVariable("departmentId")Long id,@ModelAttribute("newUpdateDepartment")Department department){
+        departmentServices.updateDepartmentId(id,department);
         return "redirect:/department";
     }
 
@@ -59,32 +72,6 @@ public class DepartmentController {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @GetMapping("{departmentId}/editDepartment")
-    public String editHospital(@PathVariable("departmentId")Long departmentId,Model model){
-        model.addAttribute("newUpdateDepartment",departmentServices.getDepartmentById(departmentId));
-        return "updateHospital";
-    }
-
-    @PatchMapping("{hospitalId}/updateHospital")
-    public String updateHospital(@PathVariable("hospitalId")Long id,@ModelAttribute("newUpdateHospital") Hospital hospital){
-        hospitalServices.updateHospitalId(hospital,id);
-        return "redirect:/hospital";
-    }
 
 
 

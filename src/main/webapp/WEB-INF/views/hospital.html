@@ -63,10 +63,6 @@
             <form th:method="PUT" th:action="@{/hospital/{hospitalId}/editHospital(hospitalId=${hospital.getId()})}">
                 <input type="submit" class="btn btn-outline-primary"  th:value="update"></input>
             </form>
-
-                <form th:method="PUT" th:action="@{/hospital/{hospitalId}/saveDepartment(hospitalId=${hospital.getId()})}">
-                    <input type="submit" class="btn btn-outline-primary"  th:value="saveDepartment"></input>
-                </form>
             </div>
         </div>
     </div>
