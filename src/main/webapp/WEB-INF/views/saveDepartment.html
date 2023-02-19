@@ -8,25 +8,21 @@
           crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
-    <form th:method="POST" th:action="createDepartment" th:object="${department}" class="form_hospital">
-        <div>
 
-            <label for="name" class="labels"> name </label>
-            <br/>
-            <input type="text" th:field="*{name}"id="name" class="inputs">
+<div class="container" style="width: 78%; margin: 0 auto">
 
-
-
+    <div class="card" style="width: 18rem;"
+         th:each="hospital:${getAllHospital}">
+        <img th:src="${hospital.getImg()}" object-fit width="223" height="170px" class="card-img-top" alt="Hospital's Image">
+        <div class="card-body">
+            <h2 class="card-title" th:text="${hospital.getName()}">Card Tittle</h2>
+            <div class="btn-container">
+                <form th:method="PUT" th:action="@{/department/{hospitalId}/saves(hospitalId=${hospital.getId()})}">
+                    <input type="submit" class="btn btn-outline-primary"  th:value="saveDepartment"></input>
+                </form>
             </div>
-
-
-
-
-            <button type="submit" class="btn_save">SAVE</button>
-
-
-    </form>
+        </div>
+    </div>
 </div>
 </div>
 

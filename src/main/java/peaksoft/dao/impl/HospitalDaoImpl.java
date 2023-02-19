@@ -44,9 +44,5 @@ public class HospitalDaoImpl implements HospitalDao {
         Hospital hospital1 = entityManager.find(Hospital.class, hospitalId);
         hospital1.setName(hospital.getName());
         hospital1.setAddress(hospital.getAddress());
-//        hospital1.setDoctors(hospital.getDoctors());
-//        hospital1.setPatients(hospital.getPatients());
-//        hospital1.setDepartments(hospital.getDepartments());
-//        hospital1.setAppointments(hospital.getAppointments());
     }
 }

@@ -56,18 +56,4 @@ public class HospitalController {
         return "redirect:/hospital";
     }
 
-    @GetMapping("{hospitalId}/saveDepartment")
-    public String saveDepartment(@PathVariable("hospitalId")Long id,Model model){
-        model.addAttribute("department",new Department());
-        return "saveDepartment";
-    }
-    @PostMapping("{hospitalId}/createDepartment")
-    public String ded(@PathVariable("hospitalId")Long id,@ModelAttribute("department")Department department){
-        department.setHospital(hospitalServices.getHospitalById(id));
-        departmentServices.saveDepartment(department);
-        return "redirect:/department";
-
-    }
-
-
 }
